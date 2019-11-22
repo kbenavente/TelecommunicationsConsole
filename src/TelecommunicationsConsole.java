@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -61,6 +62,7 @@ public class TelecommunicationsConsole implements EventHandler<ActionEvent> {
 		// ITEMS THAT GO INSIDE OF contentContainer
 
 		ArrayList<ConsoleOutputText> consoleTextStorage = new ArrayList<>();
+		consoleTextStorage.add(new ConsoleOutputText("Telecommunications System Console", null));
 
 		ScrollPane consoleScroller = new ScrollPane();
 		consoleScroller.setVmax(1);
@@ -81,9 +83,14 @@ public class TelecommunicationsConsole implements EventHandler<ActionEvent> {
 		consoleScroller.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 		consoleScroller.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
+		VBox queueAndTelemetryDataContainer = new VBox();
+		queueAndTelemetryDataContainer.prefHeightProperty().bind(contentContainer.heightProperty());
+		queueAndTelemetryDataContainer.prefWidthProperty().bind(contentContainer.widthProperty().multiply(0.5));
+		queueAndTelemetryDataContainer.setStyle("-fx-background-color: red;");
 
+		ScrollPane queueScrollerContainer = new ScrollPane();
 
-		contentContainer.getChildren().addAll(consoleScroller);
+		contentContainer.getChildren().addAll(consoleScroller, queueAndTelemetryDataContainer);
 
 		//****************************************
 
