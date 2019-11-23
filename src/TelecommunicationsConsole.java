@@ -44,13 +44,22 @@ public class TelecommunicationsConsole implements EventHandler<ActionEvent> {
 
 		Button buttonDisconnect = new Button("Disconnect");
 		buttonDisconnect.getStyleClass().add("buttonDisconnect");
-
+		
+		
+		Button buttonInopperable = new Button("Toggle Inopperable");
+		buttonInopperable.getStyleClass().add("buttonInopperable");
+		
+		
+		Button buttonDeath = new Button("Self Destruct");
+		buttonDeath.getStyleClass().add("buttonDeath");
+		
+		
 		SystemStateIndicator stateIndicator = new SystemStateIndicator(alpha.getCurrentSystemState());
 
 		Label title = new Label("Telecommunications System Console");
 		title.setStyle("-fx-text-alignment: left; -fx-text-fill: white; -fx-font-size: 20px; -fx-border-color: transparent white transparent transparent; -fx-padding: 20px 30px;");
 
-		headerContainer.getChildren().addAll(title, stateIndicator, buttonDisconnect);
+		headerContainer.getChildren().addAll(title, stateIndicator, buttonDisconnect, buttonInopperable, buttonDeath);
 
 		//****************************************
 
@@ -106,3 +115,5 @@ public class TelecommunicationsConsole implements EventHandler<ActionEvent> {
 	}
 
 }
+
+
