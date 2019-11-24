@@ -19,7 +19,17 @@
     -fx-background-color: indianred;
     -fx-text-fill: white;
     -fx-max-width: 200px;
-    -fx-max-height: 100px;
+    -fx-max-height: 30px;
+    -fx-padding: 5px;
+    -fx-border-color: transparent;
+    -fx-font-size: 15px;
+}
+
+.buttonInoperable {
+    -fx-background-color: gold;
+    -fx-text-fill: white;
+    -fx-max-width: 200px;
+    -fx-max-height: 30px;
     -fx-padding: 5px;
     -fx-border-color: transparent;
     -fx-font-size: 15px;

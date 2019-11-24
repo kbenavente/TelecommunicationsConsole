@@ -8,7 +8,16 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.Socket;
+
 public class TelecommunicationsMainMenu extends Application {
+
+	private static final String SERVER_IP_ADDRESS = "192.168.1.3";
+	private static final int PORT = 9001;
 
 	@Override
 	public void start(Stage stage) throws Exception {

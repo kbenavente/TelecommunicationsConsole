@@ -1,6 +1,21 @@
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.nio.Buffer;
+import java.util.ArrayList;
+
 public class TelecommunicationsSystem {
 
+	private BufferedReader in;
+	private PrintWriter out;
+
+	private ArrayList<ConsoleOutputText> consoleTextStorage;
+	private ArrayList<InformationQueueBlock> data;
+	private ArrayList<InformationQueueBlock> instructions;
+
 	private State currentSystemState;
+	private HighGainAntenna hga;
+	private LowGainAntenna lga;
+	private UltraHighFrequencyAntenna uhf;
 
 	private boolean LGA_STATUS;
 	private boolean HGA_STATUS;
@@ -9,6 +24,10 @@ public class TelecommunicationsSystem {
 	public TelecommunicationsSystem() {
 
 		this.currentSystemState = State.OFF;
+		this.hga = new HighGainAntenna(State.OFF);
+		this.lga = new LowGainAntenna(State.OFF);
+		this.uhf = new UltraHighFrequencyAntenna(State.OFF);
+
 		this.LGA_STATUS = false;
 		this.HGA_STATUS = false;
 		this.UHF_STATUS = false;
@@ -68,6 +87,60 @@ public class TelecommunicationsSystem {
 	public State getCurrentSystemState() {
 
 		return currentSystemState;
+
+	}
+
+	public void setCurrentSystemState(State currentState) {
+
+		this.currentSystemState = currentState;
+
+	}
+
+	public State getHGAState() {
+
+		return this.hga.getCurrentHGAState();
+
+	}
+
+	public void setHGAStatus(State current) {
+
+		this.hga.setCurrentHGAState(current);
+
+	}
+
+	public State getLGAState() {
+
+		return this.lga.getCurrentLGAState();
+
+	}
+
+	public void setLGAStatus(State current) {
+
+		this.lga.setCurrentLGAState(current);
+
+	}
+
+	public State getUHFState() {
+
+		return this.uhf.getCurrentUHFState();
+
+	}
+
+	public void setUHFStatus(State current) {
+
+		this.uhf.setCurrentUHFState(current);
+
+	}
+
+	public void setIn(BufferedReader in) {
+
+		this.in = in;
+
+	}
+
+	public void setOut(PrintWriter out) {
+
+		this.out = out;
 
 	}
 
