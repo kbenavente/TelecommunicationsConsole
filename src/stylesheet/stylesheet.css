@@ -34,3 +34,23 @@
     -fx-border-color: transparent;
     -fx-font-size: 15px;
 }
+
+.buttonInopperable {
+    -fx-background-color: gold;
+    -fx-text-fill: white;
+    -fx-max-width: 200px;
+    -fx-max-height: 100px;
+    -fx-padding: 5px;
+    -fx-border-color: transparent;
+    -fx-font-size: 15px;
+}
+
+.buttonDeath {
+    -fx-background-color: FireBrick;
+    -fx-text-fill: white;
+    -fx-max-width: 200px;
+    -fx-max-height: 100px;
+    -fx-padding: 5px;
+    -fx-border-color: transparent;
+    -fx-font-size: 15px;
+}
